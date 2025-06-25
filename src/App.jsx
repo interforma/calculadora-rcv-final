@@ -144,7 +144,7 @@ Estructura tu respuesta de la siguiente manera:
 Usa un tono cercano y alentador.`;
 
         try {
-            const apiKey = ""; 
+            const apiKey = import.meta.env.VITE_GEMINI_API_KEY; 
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
             const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
             const response = await fetch(apiUrl, {
